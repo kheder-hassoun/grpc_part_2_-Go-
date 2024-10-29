@@ -1,0 +1,20 @@
+// calculator/calculator.proto
+syntax = "proto3";
+
+package calculator;
+
+option go_package = "calculator-app/calculator";
+
+service CalculatorService {
+  rpc Add (TwoNumbers) returns (CalculationResult);
+  rpc Multiply (TwoNumbers) returns (CalculationResult);
+}
+
+message TwoNumbers {
+  int32 num1 = 1;
+  int32 num2 = 2;
+}
+
+message CalculationResult {
+  int32 result = 1;
+}
